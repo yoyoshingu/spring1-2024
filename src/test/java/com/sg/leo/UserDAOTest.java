@@ -20,14 +20,15 @@ public class UserDAOTest {
 	@Test
 	void getuserListTest() {
 		User user = new User();
-		user.setUsername("test1");
+		user.setUsername("JUnit");
 		user.setPassword("test123");
 		user.setEmail("t@t.t");
 		
 		int before = userDAO.getUserList().size();
 		userDAO.insertUser(user);
+		userDAO.insertUser(user);
 		int after = userDAO.getUserList().size();
-		assertEquals(before+1, after);
+		assertEquals(before+2, after);
 		
 	}
 }
